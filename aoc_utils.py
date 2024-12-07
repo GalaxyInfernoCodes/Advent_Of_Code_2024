@@ -23,6 +23,11 @@ def read_two_ints_from_string(line: str) -> tuple[int, int]:
     return int(numbers[0]), int(numbers[1])
 
 
+def read_int_list_from_string(line: str) -> list[int]:
+    numbers = re.findall(r"-?\d+", line)
+    return [int(number) for number in numbers]
+
+
 def read_letter_grid_from_lines(lines: list[str]) -> np.ndarray:
     char_lines = [list(line.strip()) for line in lines]
     return np.array(char_lines)
