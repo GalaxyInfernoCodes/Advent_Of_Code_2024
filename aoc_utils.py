@@ -2,6 +2,17 @@ import re
 import numpy as np
 
 
+def check_if_position_still_on_grid(
+    grid: np.ndarray, position: tuple[int, int]
+) -> bool:
+    return (
+        position[0] >= 0
+        and position[0] < grid.shape[0]
+        and position[1] >= 0
+        and position[1] < grid.shape[1]
+    )
+
+
 def read_input_file(day: int, part: int = None, mode: str = "example"):
     if mode == "example":
         if part:
