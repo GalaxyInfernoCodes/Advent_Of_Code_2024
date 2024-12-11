@@ -44,6 +44,11 @@ def read_letter_grid_from_lines(lines: list[str]) -> np.ndarray:
     return np.array(char_lines)
 
 
+def read_int_grid_from_lines(lines: list[str]) -> np.ndarray:
+    int_lines = [[int(char) for char in line.strip()] for line in lines]
+    return np.array(int_lines)
+
+
 def extract_rows_from_grid(grid: np.ndarray) -> list[str]:
     rows = ["".join(row) for row in grid]
     reversed_rows = [row[::-1] for row in rows]
