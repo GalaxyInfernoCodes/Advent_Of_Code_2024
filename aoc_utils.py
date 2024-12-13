@@ -49,6 +49,10 @@ def read_int_grid_from_lines(lines: list[str]) -> np.ndarray:
     return np.array(int_lines)
 
 
+def add_tuples(tuple1: tuple[int, int], tuple2: tuple[int, int]) -> tuple[int, int]:
+    return tuple1[0] + tuple2[0], tuple1[1] + tuple2[1]
+
+
 def extract_rows_from_grid(grid: np.ndarray) -> list[str]:
     rows = ["".join(row) for row in grid]
     reversed_rows = [row[::-1] for row in rows]
